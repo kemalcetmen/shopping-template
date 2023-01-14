@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { IconContext } from "react-icons";
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { IoMdHeart } from 'react-icons/io';
@@ -6,7 +6,7 @@ import Rating from '@mui/material/Rating';
 import styles from './index.module.scss'
 import BasketFooter from '../BasketFooter';
 import { changeLiked } from '../../features/productsSlice'
-import { useAppDispatch, useAppSelector } from '../../store'
+import { useAppDispatch } from '../../store'
 
 interface Props {
     id: number,
@@ -32,7 +32,6 @@ const OneProduct = ({
     inBasket }: Props) => {
 
     const dispatch = useAppDispatch()
-    const states = useAppSelector((state) => state.products)
 
     const likeChanger = () => {
         dispatch(changeLiked(id))

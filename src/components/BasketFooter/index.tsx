@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FiShoppingCart } from 'react-icons/fi';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { FiTrash2 } from 'react-icons/fi';
-import todoSlice, {abstract, add, empty, fetchUser} from '../../features/productsSlice'
+import { abstract, add } from '../../features/productsSlice'
 import { openModal } from '../../features/modalSlice'
 
-import { useAppDispatch, useAppSelector } from '../../store'
+import { useAppDispatch } from '../../store'
 import styles from './index.module.scss'
 
 interface Props {
