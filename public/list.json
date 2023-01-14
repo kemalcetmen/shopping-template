@@ -1,0 +1,225 @@
+{
+    "data": [
+
+        {
+            "id": 1,
+            "brand": "Nike",
+            "explanation": "Blazer Low '77 Jumbo Erkek Ayakkabısı",
+            "photo": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/81790969-727e-41d6-b821-50c49ad9af4c/blazer-low-77-jumbo-ayakkab%C4%B1s%C4%B1-gRBtmC.png",
+            "price": 1399.99,
+            "ratio": 3.5,
+            "ratioNumber": 52689,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 2,
+            "brand": "Nike",
+            "explanation": "Zoom Mercurial Vapor 15 Academy MG Çoklu Zemin Kramponu",
+            "photo": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/456ff31d-2b5b-41d6-b388-ae029f65af0f/zoom-mercurial-vapor-15-academy-mg-%C3%A7oklu-zemin-kramponu-TmVVRN.png",
+            "price": 1749.90,
+            "ratio": 1.5,
+            "ratioNumber": 289,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 3,
+            "brand": "Zoom",
+            "explanation": "Freak 4 NRG  Basketbol Ayakabısı",
+            "photo": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4e7695a1-3a51-4c22-98e3-3bad6274cee1/air-jordan-1-retro-high-og-ayakkab%C4%B1.png",
+            "price": 1799.99,
+            "ratio": 2.8,
+            "ratioNumber": 52689,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 4,
+            "brand": "Nike",
+            "explanation": "Go FlyEase Kolayca Giyilip Çıkarılabilen Ayakkabı",
+            "photo": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/879db1d0-b43a-4ee1-89b0-814d66e83638/go-flyease-kolayca-giyilip-%C3%A7%C4%B1kar%C4%B1labilen-ayakkab%C4%B1-84H33P.png",
+            "price": 2099.99,
+            "ratio": 0.9,
+            "ratioNumber": 52689,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 5,
+            "brand": "Nike",
+            "explanation": "Air Jordan 1 Low Erkek Ayakkabısı",
+            "photo": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ab3ec819-7808-4cd8-ba1c-b1e9386c8540/air-jordan-1-low-ayakkab%C4%B1s%C4%B1-v2kdOZ.png",
+            "price": 2699.90,
+            "ratio": 4.2,
+            "ratioNumber": 52689,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 6,
+            "brand": "Nike",
+            "explanation": "LeBron Witness 7",
+            "photo": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ceb7c5d7-0e91-43ef-adb3-98f88c3d9ee3/lebron-witness-7-basketbol-ayakkab%C4%B1s%C4%B1-vFL4pn.png",
+            "price": 1599.90,
+            "ratio": 2.1,
+            "ratioNumber": 52689,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 7,
+            "brand": "Nike",
+            "explanation": "Precision 5 Basketbol Ayakkabısı",
+            "photo": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/dea1b5c1-f0b3-4b7a-ab11-ce7b4e6519dd/precision-5-basketbol-ayakkab%C4%B1s%C4%B1-L3gD0s.png",
+            "price": 2199.90,
+            "ratio": 2.8,
+            "ratioNumber": 52689,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 8,
+            "brand": "Adidas",
+            "explanation": "Duramo SL 2.0 Ayakkabı",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/aa048bf416664f588de3ad6600ac438f_9366/duramo-sl-2.0-ayakkab%C4%B1.jpg",
+            "price": 1499,
+            "ratio": 5,
+            "ratioNumber": 52689,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 9,
+            "brand": "Adidas",
+            "explanation": "Stan Smith Ayakkabı",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/c1e49534cc8846509462aecc01312446_9366/stan-smith-ayakkab%C4%B1.jpg",
+            "price": 1999,
+            "ratio": 3.5,
+            "ratioNumber": 52689,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 10,
+            "brand": "Adidas",
+            "explanation": "OZWEEGO Ayakkabı",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/05aad62add694f16a779aaa400fd16fa_9366/ozweego-ayakkab%C4%B1.jpg",
+            "price": 3249,
+            "ratio": 1.3,
+            "ratioNumber": 3825,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 11,
+            "brand": "Adidas",
+            "explanation": "Orketro Ayakkabı",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/0b1a2d632ba448fcbe56af2a00e4b4a4_9366/orketro-ayakkab%C4%B1.jpg",
+            "price": 3499,
+            "ratio": 3.2,
+            "ratioNumber": 986,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 12,
+            "brand": "Adidas",
+            "explanation": "adizero Cybersonic Tenis",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/fa46b6e0a500455abeedaf190080aa23_9366/adizero-cybersonic-tenis-ayakkab%C4%B1s%C4%B1.jpg",
+            "price": 99,
+            "ratio": 2.3,
+            "ratioNumber": 589,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 13,
+            "brand": "Adidas",
+            "explanation": "D Rose Son of Chi Ayakkabı",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/50628f3342184dec932cadaa014183b2_9366/d-rose-son-of-chi-ayakkab%C4%B1.jpg",
+            "price": 2099,
+            "ratio": 2,
+            "ratioNumber": 244,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 14,
+            "brand": "Adidas",
+            "explanation": "D.O.N. Issue 4 Ayakkabı",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/2af0a48b27d349b4b144af150183fdf3_9366/d.o.n.-issue-4-ayakkab%C4%B1.jpg",
+            "price": 2309,
+            "ratio": 1.6,
+            "ratioNumber": 1254,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 15,
+            "brand": "Adidas",
+            "explanation": "Niteball 2.0 Ayakkabı",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/d4dee905e58c477f8274ae8500f964ca_9366/niteball-2.0-ayakkab%C4%B1.jpg",
+            "price": 2309,
+            "ratio": 4.9,
+            "ratioNumber": 5122,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 16,
+            "brand": "Adidas",
+            "explanation": "Response Super 2.0 Ayakkabı",
+            "photo": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/4f69b7381fca4d539592aecb00d39d5e_9366/response-super-2.0-ayakkab%C4%B1.jpg",
+            "price": 1889,
+            "ratio": 3.9,
+            "ratioNumber": 1364,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 17,
+            "brand": "Puma",
+            "explanation": "MB.02 ROTY Basketbol",
+            "photo": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/377644/01/sv01/fnd/TUR/w/320/h/320/fmt/png",
+            "price": 4300,
+            "ratio": 3.2,
+            "ratioNumber": 1907,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 18,
+            "brand": "Puma",
+            "explanation": "RS-X MID Lth Ayakkabı",
+            "photo": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/389211/03/sv01/fnd/TUR/w/320/h/320/fmt/png",
+            "price": 889,
+            "ratio": 2.7,
+            "ratioNumber": 2764,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 19,
+            "brand": "Puma",
+            "explanation": "TEVERIS NITRO Ayakkabı",
+            "photo": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/388774/03/sv01/fnd/TUR/w/320/h/320/fmt/png",
+            "price": 2500,
+            "ratio": 4.3,
+            "ratioNumber": 200,
+            "isLiked": false,
+            "inBasket": 0
+        },
+        {
+            "id": 20,
+            "brand": "Puma",
+            "explanation": "",
+            "photo": "",
+            "price": 1889,
+            "ratio": 3.9,
+            "ratioNumber": 1364,
+            "isLiked": false,
+            "inBasket": 0
+        }
+    ]
+}

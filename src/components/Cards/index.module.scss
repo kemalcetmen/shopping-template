@@ -1,0 +1,37 @@
+.cards {
+    ul{
+        width: 36rem ; // will be better
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        // overflow: auto;
+        margin: 1rem 0;
+        padding: 0;
+        li {
+            display: inline;
+            list-style-type: none;
+            //CHANGE PADDNG LOCATİON TO CARD
+         }
+    }
+
+}
+// .cards {
+//     width: 36rem ; // will be better
+//     display: flex;
+//     justify-content: space-around;
+//     flex-wrap: wrap;
+//     // overflow: auto;
+//     margin: 0;
+//     padding: 0;
+    
+//     li {
+//         display: inline;
+//         list-style-type: none;
+//         //CHANGE PADDNG LOCATİON TO CARD
+//      }
+//     ul{
+
+//     }
+
+// }
+//for deleting div making just with ul

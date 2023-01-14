@@ -1,0 +1,111 @@
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    background-color: black;
+    font-size: 0.8rem;
+
+    .alltexts {
+        padding: 3rem ;
+        display: flex;
+        flex-direction: row;
+        ul{
+            width: 100% ;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+
+            h3 {
+                margin-bottom: 0.5rem;
+            }
+            
+            li {
+                display: inline;
+                list-style-type: none;
+             }
+        }
+        .socials {
+            margin: 0 5rem;
+            .fb,.yt,.tw,.in,.git{
+                width: 2.5rem;
+                height: 2.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                svg {
+                  cursor: pointer;
+                  fill: #6daed3;
+                  width: 1.5rem;
+                  height: 1.5rem;
+
+                  &:hover{
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    // animation-name: iconhover;
+                    // animation-duration: 0.5s;
+                  }
+                  // &:not(:hover){
+                  //   animation-name: iconunhover;
+                  //   animation-duration: 0.5s;
+                  //  }
+                }
+              }
+              .fb{
+                svg{
+                    width: 1.3rem;
+                    height: 1.3rem;
+                  &:hover{
+                    fill: #4267B2;
+                    &:hover{
+                      width: 2.3rem;
+                      height: 2.3rem;
+                    }
+                  }
+                }
+              }
+              .yt{
+                svg{
+                    width: 1.45rem;
+                    height: 1.45rem;
+                  &:hover{
+                    fill:	#FF0000;
+                  }
+                }
+              }
+              .tw{
+                svg{
+                  &:hover{
+                    fill:#1DA1F2;
+                  }
+                }
+              }
+              .in{
+                svg{
+                  &:hover{
+                    fill:#8a3ab9;
+                  }
+                }
+              }
+              .git{
+                svg{
+                  &:hover{
+                    fill:#000;
+                  }
+                }
+              }
+        }
+    }
+
+    .rights {
+        width: 100%;
+        background-color: #3a3a3a; 
+        height: 1rem;
+        font-size: 0.6rem; 
+    }
+}
