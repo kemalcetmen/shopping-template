@@ -10,7 +10,7 @@ import { useAppDispatch } from '../../store'
 import styles from './index.module.scss'
 
 interface Props {
-    id: number ,
+    id: number,
     photo: string,
     inBasket: number
 }
@@ -29,7 +29,7 @@ const BasketFooter = ({
         dispatch(abstract(id))
     }
     const emptyBasket = () => {
-        dispatch(openModal({id,photo}))
+        dispatch(openModal({ id, photo }))
     }
     return (
         <div className={styles.basketfooter}>
@@ -43,17 +43,17 @@ const BasketFooter = ({
                     :
                     <div className={styles.basketoperations}>
                         <div className={styles.basketicons}>
-                            <AiOutlinePlusCircle onClick={addOne}/>
+                            <AiOutlinePlusCircle onClick={addOne} />
                             <p>{inBasket}</p>
                             {
-                                inBasket === 1 
-                                ?
-                                <FiTrash2 onClick={emptyBasket}/> 
-                                :
-                                <AiOutlineMinusCircle onClick={subtractOne} />
+                                inBasket === 1
+                                    ?
+                                    <FiTrash2 onClick={emptyBasket} />
+                                    :
+                                    <AiOutlineMinusCircle onClick={subtractOne} />
                             }
                         </div>
-                        <FiTrash2 onClick={emptyBasket}/>
+                        <FiTrash2 onClick={emptyBasket} />
                     </div>
             }
         </div>

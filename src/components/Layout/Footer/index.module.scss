@@ -11,6 +11,7 @@
         padding: 3rem ;
         display: flex;
         flex-direction: row;
+
         ul{
             width: 100% ;
             display: flex;
@@ -31,6 +32,7 @@
         }
         .socials {
             margin: 0 5rem;
+            
             .fb,.yt,.tw,.in,.git{
                 width: 2.5rem;
                 height: 2.5rem;
@@ -47,13 +49,7 @@
                   &:hover{
                     width: 2.5rem;
                     height: 2.5rem;
-                    // animation-name: iconhover;
-                    // animation-duration: 0.5s;
                   }
-                  // &:not(:hover){
-                  //   animation-name: iconunhover;
-                  //   animation-duration: 0.5s;
-                  //  }
                 }
               }
               .fb{
