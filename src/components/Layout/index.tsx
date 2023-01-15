@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import Header from "./Header"
 import Footer from "./Footer"
 import Modal from "../Modal"
-import { fetchUser, filter } from '../../features/productsSlice'
+import { fetchUser } from '../../features/productsSlice'
 import { useAppDispatch, useAppSelector } from '../../store'
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -13,9 +13,6 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
     const dispatch = useAppDispatch()
-    const filterProducts = (tofilter: string) => {
-        dispatch(filter(tofilter))
-    }
     const {loading} = useAppSelector((state) => state.products)
 
     useEffect(() => {
@@ -24,7 +21,7 @@ const Layout = ({ children }: Props) => {
 
     return (
         <div className={styles.fullscreen}>
-            <Header filterProducts={filterProducts} />
+            <Header/>
             <main>
                 {loading
                     ?

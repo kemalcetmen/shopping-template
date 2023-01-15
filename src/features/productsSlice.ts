@@ -2,7 +2,12 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit"
 
 import axios from "axios"
 
-export interface Product {
+export const fetchUser = createAsyncThunk("fetchUser", async () => {
+    const { data } = await axios.get(`./list.json`);
+    return data
+})
+
+interface Product {
     id: number,
     brand: string,
     explanation: string,
@@ -18,20 +23,14 @@ interface ProductState {
     products: Product[] | null,
     loading: boolean,
     error: string,
-    filtered: Product[] | null | undefined,
 }
 
 const initialState: ProductState = {
     products: [],
     loading: false,
     error: "",
-    filtered: [],
 }
 
-export const fetchUser = createAsyncThunk("fetchUser", async () => {
-    const { data } = await axios.get(`./list.json`);
-    return data
-})
 const productsSlice = createSlice({
     name: "products",
     initialState,
@@ -61,18 +60,9 @@ const productsSlice = createSlice({
 
             state.products[index] = { ...state.products[index], isLiked: !state.products[index].isLiked }
         },
-        filter: (state, action: PayloadAction<string>) => {           
-            const filteredProducts = state.products?.filter((product: Product) => {
-                let fullName = product.brand + ' ' + product.explanation
-
-                return fullName.toLowerCase().includes(action.payload.toLowerCase())
-            })
-            state.filtered = filteredProducts
-        },
-
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchUser.pending, (state, action) => {
+        builder.addCase(fetchUser.pending, (state) => {
             state.loading = true;
             state.error = "";
         })
@@ -80,9 +70,8 @@ const productsSlice = createSlice({
             state.loading = false;
             state.error = "";
             state.products = action.payload.data
-            state.filtered = action.payload.data
         })
-        builder.addCase(fetchUser.rejected, (state, action) => {
+        builder.addCase(fetchUser.rejected, (state) => {
             state.loading = false;
             state.error = "Error fetching user data";
         })
@@ -90,4 +79,4 @@ const productsSlice = createSlice({
 })
 
 export default productsSlice.reducer
-export const { add, abstract, empty, changeLiked, filter } = productsSlice.actions
+export const { add, abstract, empty, changeLiked } = productsSlice.actions

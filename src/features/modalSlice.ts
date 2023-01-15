@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit"
 
-export interface Modal {
+interface Modal {
     product: Iproduct | null,
     modalOpen: boolean, 
 }

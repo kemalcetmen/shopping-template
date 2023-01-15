@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { useDispatch,useSelector, TypedUseSelectorHook } from "react-redux";
+import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import productsSlice from "../features/productsSlice";
 import modalSlice from "../features/modalSlice";
+import inputSlice from "../features/inputSlice";
 
 const store = configureStore({
     reducer: {
         products: productsSlice,
-        modal: modalSlice
+        modal: modalSlice,
+        search: inputSlice
     }
 })
 

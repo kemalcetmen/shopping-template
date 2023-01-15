@@ -42,9 +42,9 @@ const BagModal = (props: Props) => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style} onClick={close}>
+                <Box sx={style}>
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <IconButton aria-label="delete">
+                        <IconButton aria-label="delete" onClick={close}>
                             <ClearIcon />
                         </IconButton>
 

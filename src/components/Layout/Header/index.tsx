@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import styles from './index.module.scss'
 import Headroom from "react-headroom"
@@ -8,24 +8,21 @@ import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { HiOutlineHeart } from 'react-icons/hi';
 import { AiOutlineShop } from 'react-icons/ai';
 import { MdOutlineClear } from 'react-icons/md';
+import { changeInput } from '../../../features/inputSlice'
+import { useAppDispatch, useAppSelector } from '../../../store'
 
-type Props = {
-    filterProducts: (tofilter: string) => void
-}
+const Header = () => {
+    const {text} = useAppSelector((state) => state.search)
+    const dispatch = useAppDispatch()
 
-const Header = ({filterProducts}: Props) => {
-    const [inputValue, setInputValue] = useState("") 
     const handleChange = (e:any) => {
-        filterProducts(e.target.value)
-        setInputValue(e.target.value)
-      }
+        dispatch(changeInput(e.target.value))
+    }
     const clearInput =()=>{
-        filterProducts("")
-        setInputValue("")
+        dispatch(changeInput(""))
     }
 
       return (
-
         <Headroom style={{ zIndex:"5"}}>
             <header className={styles.header}>
                 <div className={styles.logo}>
@@ -38,10 +35,10 @@ const Header = ({filterProducts}: Props) => {
                     <TbSearch />
                     <input
                         placeholder='Ara'
-                        value={inputValue}
+                        value={text}
                         onChange={handleChange}
                     />
-                    {inputValue && <MdOutlineClear onClick={clearInput} style={{cursor:"pointer"}} color="#ccc"/>}
+                    {text && <MdOutlineClear onClick={clearInput} style={{cursor:"pointer"}} color="#ccc"/>}
                 </div>
                 <nav>
                     <IconContext.Provider value={{ color: "grey" }}>
@@ -51,7 +48,7 @@ const Header = ({filterProducts}: Props) => {
                         <CustomLink to="/favorites">
                             <HiOutlineHeart />
                         </CustomLink>
-                        <CustomLink to="/basket">
+                        <CustomLink to="/bag">
                             <HiOutlineShoppingBag />
                         </CustomLink>
                     </IconContext.Provider>

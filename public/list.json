@@ -9,8 +9,8 @@
             "price": 1399.99,
             "ratio": 3.5,
             "ratioNumber": 52689,
-            "isLiked": false,
-            "inBasket": 0
+            "isLiked": true,
+            "inBasket": 1
         },
         {
             "id": 2,
@@ -21,7 +21,7 @@
             "ratio": 1.5,
             "ratioNumber": 289,
             "isLiked": false,
-            "inBasket": 0
+            "inBasket": 1
         },
         {
             "id": 3,
@@ -31,7 +31,7 @@
             "price": 1799.99,
             "ratio": 2.8,
             "ratioNumber": 52689,
-            "isLiked": false,
+            "isLiked": true,
             "inBasket": 0
         },
         {

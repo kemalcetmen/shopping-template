@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styles from './index.module.scss'
 import Card from '../Card'
+import useSequence from '../../hooks/useSequence'
+import useFilter from '../../hooks/useFilter'
 import { useAppSelector } from '../../store'
 
 interface Product {
@@ -16,19 +18,20 @@ interface Product {
 }
 
 interface Props {
-    page?: string,
+    page: string,
 }
 
 const Cards = ({page}: Props) => {
-    const states = useAppSelector((state) => state.products)
-    const [products, setProducts] = useState<Product[]>([])
+    const products = useSequence({sequenceType:"price",reverse:true})
+    const filteredProducts= useFilter(products)
+    // const states = useAppSelector((state) => state.products)
 
-    // useEffect(()=>{
-    //     console.log(states.filtered?.sort((a,b) => a.price - b.price))
-    // },[])
+    // console.log(page)
     return (
         <div className={styles.cards}>
-            <ul>{states.filtered?.map((e: Product, i: number) => (
+            <ul>{filteredProducts?.map((e: Product, i: number) => (
+                (page ==="main" || (page ==="bag" && e.inBasket) || (page ==="favorites" && e.isLiked))
+                 && 
                     <li key={i}>
                         <Card
                             id={e.id}
