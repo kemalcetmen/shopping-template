@@ -1,18 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
+import { useAppDispatch, useAppSelector } from '../../store'
+import { changeSorting } from '../../features/sortingSlice'
 
-interface Props {
-    setTyper: React.Dispatch<React.SetStateAction<{
-        sequenceType: string;
-        reverse: boolean;
-    }>>;
-}
-
-const DropDawn = ({ setTyper }: Props) => {
+const DropDawn = () => {
     const ref = useRef<any>()
 
     const [isOpen, setIsOpen] = useState(false)
-    const [sortBy, setSortBy] = useState("High to Low")
+    const { sort } = useAppSelector((state) => state.sort)
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         const handleOutsideClick = (e: any) => {
@@ -26,48 +22,36 @@ const DropDawn = ({ setTyper }: Props) => {
             document.removeEventListener("mousedown", handleOutsideClick);
         };
     });
-
-    const sortHighttoLow = () => {
-        setTyper({
-            sequenceType: "price",
-            reverse: false
-        })
+    const sortFeatured = () => {
+        dispatch(changeSorting("featured"))
         setIsOpen(false)
-        setSortBy("High to Low")
+    }
+    const sortHighttoLow = () => {
+        dispatch(changeSorting("hightolow"))
+        setIsOpen(false)
     }
     const sortLowtoHigh = () => {
-        setTyper({
-            sequenceType: "price",
-            reverse: true
-        })
+        dispatch(changeSorting("lowtohigh"))
         setIsOpen(false)
-        setSortBy("Low to High")
     }
-    const sortFeatured = () => {
-        setTyper({
-            sequenceType: "suggest",
-            reverse: false
-        })
-        setIsOpen(false)
-        setSortBy("Featured")
-    }
+
     return (
         <div className={styles.dropdown}>
             {!isOpen
                 ?
                 <div className={styles.closed} onClick={() => { setIsOpen(true) }}>
                     <h4>Sort by</h4>
-                    <p>{sortBy}</p>
+                    <p>{sort}</p>
                 </div>
                 :
                 <ul ref={ref} onClick={() => { }}>
-                    <li onClick={sortFeatured} className={`${sortBy === "Featured" && styles.choosen}`}>
+                    <li onClick={sortFeatured} className={`${sort === "featured" && styles.choosen}`}>
                         Featured
                     </li>
-                    <li onClick={sortHighttoLow} className={`${sortBy === "High to Low" && styles.choosen}`}>
+                    <li onClick={sortHighttoLow} className={`${sort === "hightolow" && styles.choosen}`}>
                         Price: High to Low
                     </li>
-                    <li onClick={sortLowtoHigh} className={`${sortBy === "Low to High" && styles.choosen}`}>
+                    <li onClick={sortLowtoHigh} className={`${sort === "lowtohigh" && styles.choosen}`}>
                         Price: Low to High
                     </li>
                 </ul>

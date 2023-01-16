@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useAppSelector } from '../store'
+import { useAppSelector } from '../../store'
 
 type Props = {
   sequenceType: string,
@@ -34,14 +34,13 @@ const useSequence = ({ sequenceType, reverse }: Props): Product[] => {
 
     let items = [...getItems(states)]
 
-
     switch (sequenceType) {
       case "suggest":
         items.sort((a, b) => b.id - a.id);
         break;
-        case "price":
-          items.sort((a, b) => b.price - a.price);
-          break;
+      case "price":
+        items.sort((a, b) => b.price - a.price);
+        break;
       default:
         items.sort((a, b) => b.id - a.id);
     }

@@ -13,27 +13,35 @@ interface Product {
     inBasket: number,
 }
 
-type Props = Product[]
+// this hook takes all necessary states and gives new products which u wants
 
-const useFilter = ( products : Props): Product[] => {
+// before this hook I did it on other two hooks but I guess it is faster
+//you can check them in ./olds
+const useAllFilter = () => {
+    const { products } = useAppSelector((state) => state.products)
     const { search } = useAppSelector((state) => state.search)
+    const { sort } = useAppSelector((state) => state.sort)
+    
+    let newProducts = [...products]
 
-    const [filteredProducts, setfilteredProducts] = useState<Product[]>([])
+    switch (sort) {
+        case "suggest":
+            newProducts.sort((a, b) => b.id - a.id);
+            break;
 
-    useEffect(() => {
-        if (search === "") {
-            setfilteredProducts(products)
-        } else {
-            const filtereds = products?.filter((product: Product) => {
-                let fullName = product.brand + ' ' + product.explanation
+        case "price":
+            newProducts.sort((a, b) => b.price - a.price);
+            break;
 
-                return fullName?.toLowerCase().includes(search.toLowerCase())
-            })
-            setfilteredProducts(filtereds)
-        }
-    }, [products, search])
+        default:
+            newProducts.sort((a, b) => b.id - a.id);
+    }
+    if (search) newProducts = newProducts?.filter((product: Product) => {
+        let fullName = product.brand + ' ' + product.explanation
+        return fullName?.toLowerCase().includes(search.toLowerCase())
+    })
 
-    return filteredProducts
+    return newProducts
 }
 
-export default useFilter
+export default useAllFilter

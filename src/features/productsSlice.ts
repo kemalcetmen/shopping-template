@@ -19,7 +19,7 @@ interface Product {
 }
 
 interface ProductState {
-    products: Product[] | null,
+    products: Product[],
     loading: boolean,
     error: string,
 }
