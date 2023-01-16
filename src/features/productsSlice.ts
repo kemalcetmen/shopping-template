@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit"
-
 import axios from "axios"
 
 export const fetchUser = createAsyncThunk("fetchUser", async () => {
@@ -44,20 +43,17 @@ const productsSlice = createSlice({
             if (state.products === null) return
             const index = state.products?.findIndex((product: Product) => product.id === action.payload)
             if (state.products[index].inBasket === 0) return
-
             state.products[index] = { ...state.products[index], inBasket: state.products[index].inBasket - 1 }
         },
         empty: (state, action: PayloadAction<number>) => {
             if (state.products === null) return
             const index = state.products?.findIndex((product: Product) => product.id === action.payload)
             if (state.products[index].inBasket === 0) return
-
             state.products[index] = { ...state.products[index], inBasket: 0 }
         },
         changeLiked: (state, action: PayloadAction<number>) => {
             if (state.products === null) return
             const index = state.products?.findIndex((product: Product) => product.id === action.payload)
-
             state.products[index] = { ...state.products[index], isLiked: !state.products[index].isLiked }
         },
     },

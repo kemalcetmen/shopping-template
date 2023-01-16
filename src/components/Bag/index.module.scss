@@ -1,0 +1,29 @@
+.bag {
+    width: 13rem;
+    height: auto;
+    position: fixed;
+    right: 2rem;
+    top: 10rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    background-color: #ADD8E6 ;
+    border-radius: 1rem;
+
+    .price {
+        display: flex;
+        width: auto;
+        margin: 1rem 0;
+        font-size: large;
+    }
+    .checkout {
+        background-color: #E0FFFF;
+        font-size: medium;
+        padding: 0.4rem;
+        border-radius:0.5rem;
+        cursor: pointer;
+    }
+}

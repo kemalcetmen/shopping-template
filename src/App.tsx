@@ -1,15 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Cards from './components/Cards'
-
+import DropDown from './components/DropDown'
 import useSequence from './hooks/useSequence'
 import useFilter from './hooks/useFilter'
 
 function App() {
-  const sequencedProducts = useSequence({sequenceType:"price",reverse:true})
-  const filteredProducts= useFilter(sequencedProducts)
+  const [typer, setTyper] = useState({ sequenceType: "price", reverse: true })
+
+  const sequencedProducts = useSequence(typer)
+  const filteredProducts = useFilter(sequencedProducts)
 
   return (
-      <Cards products={filteredProducts}/>
+    <>
+      <DropDown setTyper={setTyper}/>
+      <Cards products={filteredProducts} />
+    </>
   );
 }
 

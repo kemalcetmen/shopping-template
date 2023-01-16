@@ -16,22 +16,22 @@ interface Product {
 type Props = Product[]
 
 const useFilter = ( products : Props): Product[] => {
-    const { text } = useAppSelector((state) => state.search)
+    const { search } = useAppSelector((state) => state.search)
 
     const [filteredProducts, setfilteredProducts] = useState<Product[]>([])
 
     useEffect(() => {
-        if (text === "") {
+        if (search === "") {
             setfilteredProducts(products)
         } else {
             const filtereds = products?.filter((product: Product) => {
                 let fullName = product.brand + ' ' + product.explanation
 
-                return fullName.toLowerCase().includes(text.toLowerCase())
+                return fullName?.toLowerCase().includes(search.toLowerCase())
             })
             setfilteredProducts(filtereds)
         }
-    }, [products, text])
+    }, [products, search])
 
     return filteredProducts
 }

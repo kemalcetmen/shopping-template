@@ -34,12 +34,14 @@ const useSequence = ({ sequenceType, reverse }: Props): Product[] => {
 
     let items = [...getItems(states)]
 
+
     switch (sequenceType) {
-      case "price":
-        items.sort((a, b) => b.price - a.price);
+      case "suggest":
+        items.sort((a, b) => b.id - a.id);
         break;
-      // case y:
-      //   break;
+        case "price":
+          items.sort((a, b) => b.price - a.price);
+          break;
       default:
         items.sort((a, b) => b.id - a.id);
     }

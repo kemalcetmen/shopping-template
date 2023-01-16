@@ -19,12 +19,12 @@ interface Props {
     products: Product[],
 }
 
-const Cards = ({products}: Props) => {
+const Cards = ({ products }: Props) => {
 
     return (
         <div className={styles.cards}>
             <ul>{products.length > 0 ?
-            products.map((e: Product, i: number) => (
+                products.map((e: Product, i: number) => (
                     <li key={i}>
                         <Card
                             id={e.id}
@@ -40,7 +40,7 @@ const Cards = ({products}: Props) => {
                     </li>
                 ))
                 :
-                <NoProduct/>}
+                <NoProduct />}
             </ul>
         </div>
     )

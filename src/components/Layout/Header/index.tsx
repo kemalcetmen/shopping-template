@@ -10,38 +10,44 @@ import { AiOutlineShop } from 'react-icons/ai';
 import { MdOutlineClear } from 'react-icons/md';
 import { changeInput } from '../../../features/inputSlice'
 import { useAppDispatch, useAppSelector } from '../../../store'
+import ThemeButton from './ThemeButton'
 
 const Header = () => {
-    const {text} = useAppSelector((state) => state.search)
+    const { search } = useAppSelector((state) => state.search)
     const dispatch = useAppDispatch()
 
-    const handleChange = (e:any) => {
+    const handleChange = (e: any) => {
         dispatch(changeInput(e.target.value))
     }
-    const clearInput =()=>{
+    const clearInput = () => {
         dispatch(changeInput(""))
     }
 
-      return (
-        <Headroom style={{ zIndex:"5"}}>
+    return (
+        <Headroom style={{ zIndex: "5" }}>
             <header className={styles.header}>
                 <div className={styles.logo}>
+                <Link to="/">
                     <img
-                        src='./logo.jpg'
-                        alt='LOGO'    
+                        src='./logo.svg'
+                        alt='LOGO'
                     />
+                </Link>
                 </div>
-                <div className={styles.search}>
-                    <TbSearch />
-                    <input
-                        placeholder='Ara'
-                        value={text}
-                        onChange={handleChange}
-                    />
-                    {text && <MdOutlineClear onClick={clearInput} style={{cursor:"pointer"}} color="#ccc"/>}
+                <div className={styles.middle}>
+                    <div className={styles.search}>
+                        <TbSearch />
+                        <input
+                            placeholder='Ara'
+                            value={search}
+                            onChange={handleChange}
+                        />
+                        {search && <MdOutlineClear onClick={clearInput} style={{ cursor: "pointer" }} color="#ccc" />}
+                    </div>
+                    <ThemeButton />
                 </div>
                 <nav>
-                    <IconContext.Provider value={{ color: "grey" }}>
+                    <IconContext.Provider value={{ color: "#87ceeb " }}>
                         <CustomLink to="/">
                             <AiOutlineShop strokeWidth='1.3rem' />
                         </CustomLink>

@@ -67,7 +67,7 @@ const BagModal = (props: Props) => {
                         <Button onClick={emptyBasket} color="error" variant="contained" startIcon={< DeleteIcon />}>
                             SİL
                         </Button>
-                        <Button sx={{ ml: 1 }} variant="outlined">İptal</Button>
+                        <Button  sx={{ ml: 1 }} onClick={close} variant="outlined">İptal</Button>
                     </Box>
                 </Box>
             </Modal>

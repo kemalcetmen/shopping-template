@@ -4,7 +4,7 @@ import { IoMdHeartEmpty } from 'react-icons/io';
 import { IoMdHeart } from 'react-icons/io';
 import Rating from '@mui/material/Rating';
 import styles from './index.module.scss'
-import BasketFooter from '../BasketFooter';
+import BasketFooter from '../BagFooter';
 import { changeLiked } from '../../features/productsSlice'
 import { useAppDispatch } from '../../store'
 
@@ -52,7 +52,7 @@ const OneProduct = ({
                     </div>
                 </IconContext.Provider>
                 <div className={styles.image}>
-                    <img src={photo} alt={brand} />
+                    <img src={photo} alt={brand} loading="lazy"/>
                 </div>
                 <div className={styles.cardfooter}>
                     <div className={styles.explanation}>
