@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import styles from './index.module.scss'
 import Headroom from "react-headroom"
@@ -12,6 +12,7 @@ import { FiSettings } from 'react-icons/fi';
 import { changeInput } from '../../../features/inputSlice'
 import { useAppDispatch, useAppSelector } from '../../../store'
 import ThemeButton from './ThemeButton'
+import {useTranslation} from "react-i18next"
 
 const Header = () => {
     const { search } = useAppSelector((state) => state.search)
@@ -24,6 +25,20 @@ const Header = () => {
         dispatch(changeInput(""))
     }
 
+    const {t, i18n} = useTranslation()
+
+    const [lang, setLang] = useState("En")
+    const langChanger = () => {
+       if( lang === "En" ) {
+        i18n.changeLanguage("Tr")
+        setLang("Tr")} 
+       else {
+        i18n.changeLanguage("En")
+         setLang("En")}
+    }
+    //Sorry for lang bar. I didnt have time
+
+    const searchHolder= t("search")
     return (
         <Headroom style={{ zIndex: "5" }}>
             <header className={styles.header}>
@@ -35,12 +50,15 @@ const Header = () => {
                     />
                 </Link>
                 </div>
+                <div className={styles.langs} onClick={langChanger}>
+                    {lang}
+                </div>
                 <div className={styles.middle}>
                     <ThemeButton />
                     <div className={styles.search}>
                         <TbSearch />
                         <input
-                            placeholder='Ara'
+                            placeholder={searchHolder}
                             value={search}
                             onChange={handleChange}
                         />

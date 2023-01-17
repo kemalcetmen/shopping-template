@@ -9,6 +9,11 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--background);
+    .langs {
+        height: 1rem;
+        width: 1rem;
+        text-align: center;
+    }
     @media (min-width: $size-1) {
         display: flex;
         height: 4rem;

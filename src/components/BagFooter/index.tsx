@@ -5,9 +5,9 @@ import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { FiTrash2 } from 'react-icons/fi';
 import { abstract, add } from '../../features/productsSlice'
 import { openModal } from '../../features/modalSlice'
-
 import { useAppDispatch } from '../../store'
 import styles from './index.module.scss'
+import { useTranslation } from "react-i18next"
 
 interface Props {
     id: string,
@@ -31,13 +31,16 @@ const BasketFooter = ({
     const emptyBasket = () => {
         dispatch(openModal({ id, photo }))
     }
+    const { t } = useTranslation()
+    const addbasket = t("addbasket")
+
     return (
         <div className={styles.basketfooter}>
             {
                 inBasket === 0
                     ?
                     <div onClick={addOne} className={styles.addbasket}>
-                        <p>Add Basket</p> &nbsp;
+                        <p>{addbasket}</p> &nbsp;
                         <FiShoppingCart />
                     </div>
                     :

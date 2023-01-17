@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import App from './App';
-import Bag from './Bag';
-import Favorites from './Favorites';
-import Address from './Address';
-import NotFound from './NotFound';
+import App from './pages/App';
+import Bag from './pages/Bag';
+import Favorites from './pages/Favorites';
+import Address from './pages/Address';
+import NotFound from './pages/NotFound';
 import Layout from './components/Layout';
 import { Provider } from "react-redux"
 import store from "./store";
-
+import "./i18next"
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

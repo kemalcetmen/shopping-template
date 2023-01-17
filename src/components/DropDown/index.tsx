@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { changeSorting } from '../../features/sortingSlice'
+import { useTranslation } from "react-i18next"
 
 const DropDawn = () => {
     const ref = useRef<any>()
@@ -10,6 +11,7 @@ const DropDawn = () => {
     const { sort } = useAppSelector((state) => state.sort)
     const dispatch = useAppDispatch()
 
+    const { t } = useTranslation()
 
     useEffect(() => {
         //for close when click outside
@@ -36,25 +38,42 @@ const DropDawn = () => {
         dispatch(changeSorting("Low to High"))
         setIsOpen(false)
     }
+    const sortOpt1 = t("sortOpt1")
+    const sortOpt2 = t("sortOpt2")
+    const sortOpt3 = t("sortOpt3")
+    let sortName
+    switch (sort) {
+        case "Featured":
+            sortName = sortOpt1
+            break;
+        case "High to Low":
+            sortName = sortOpt2
+            break;
+        case "Low to High":
+            sortName = sortOpt3
+            break;
 
+        default:
+            break;
+    }
     return (
         <div className={styles.dropdown}>
             {!isOpen
                 ?
                 <div className={styles.closed} onClick={() => { setIsOpen(true) }}>
-                    <h4>Sort by</h4>
-                    <p>{sort}</p>
+                    <h4>{t("sort")}</h4>
+                    <p>{sortName}</p>
                 </div>
                 :
                 <ul ref={ref} onClick={() => { }}>
                     <li onClick={sortFeatured} className={`${sort === "Featured" && styles.choosen}`}>
-                        Featured
+                        {sortOpt1}
                     </li>
                     <li onClick={sortHighttoLow} className={`${sort === "High to Low" && styles.choosen}`}>
-                        Price: High to Low
+                        {sortOpt2}
                     </li>
                     <li onClick={sortLowtoHigh} className={`${sort === "Low to High" && styles.choosen}`}>
-                        Price: Low to High
+                        {sortOpt3}
                     </li>
                 </ul>
             }
