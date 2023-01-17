@@ -36,46 +36,68 @@ const OneProduct = ({
     const likeChanger = () => {
         dispatch(changeLiked(id))
     }
+
+    const isBag = true
     return (
-        <div className={styles.cardframe}>
+        <div className={`${styles.cardframe} ${styles.inbag}`}>
             <div className={styles.card}>
+                {!isBag
+                &&
                 <IconContext.Provider value={{ size: "1.45rem", color: "#6daed3" }}>
-                    <div className={styles.iconContainer}>
-                        <div className={styles.icon} onClick={likeChanger}>
-                            {isLiked
-                                ?
-                                <IoMdHeart />
-                                :
-                                <IoMdHeartEmpty color="grey" />
-                            }
-                        </div>
+                <div className={styles.iconContainer}>
+                    <div className={styles.icon} onClick={likeChanger}>
+                        {isLiked
+                            ?
+                            <IoMdHeart />
+                            :
+                            <IoMdHeartEmpty color="grey" />
+                        }
                     </div>
-                </IconContext.Provider>
+                </div>
+            </IconContext.Provider>}
                 <div className={styles.image}>
-                    <img src={photo} alt={brand} loading="lazy"/>
+                    <img src={photo} alt={brand} loading="lazy" />
                 </div>
                 <div className={styles.cardfooter}>
                     <div className={styles.explanation}>
                         <p><strong>{brand}</strong>&nbsp;{explanation}</p>
-                    </div>
-                    <div className={styles.ratio}>
-                        <Rating
-                            value={ratio}
-                            precision={0.1}
-                            readOnly
-                            max={5}
-                            size="small"
-                        />
-                        <p>{ratioNumber}</p>
-                    </div>
-                    <div className={styles.basket}>
+                        {isBag
+                        &&
                         <p>{price}&nbsp;TL</p>
-                        <BasketFooter
-                            id={id}
-                            photo={photo}
-                            inBasket={inBasket}
-                        />
+                        }
                     </div>
+                    {!isBag
+                        &&
+                        <div className={styles.ratio}>
+                            <Rating
+                                value={ratio}
+                                precision={0.1}
+                                readOnly
+                                max={5}
+                                size="small"
+                            />
+                            <p>{ratioNumber}</p>
+                        </div>
+                    }
+                    {
+                        !isBag
+                            &&
+                            <div className={styles.basket}>
+                                <p>{price}&nbsp;TL</p>
+                                <BasketFooter
+                                    id={id}
+                                    photo={photo}
+                                    inBasket={inBasket}
+                                />
+                            </div>
+                    }
+                    {isBag
+                    &&
+                    <BasketFooter
+                        id={id}
+                        photo={photo}
+                        inBasket={inBasket}
+                    />}
                 </div>
             </div>
         </div>

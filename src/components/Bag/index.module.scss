@@ -1,29 +1,48 @@
+@import '../../styles/sizes.scss';
 .bag {
-    width: 13rem;
+    width: auto;
     height: auto;
     position: fixed;
-    right: 2rem;
-    top: 10rem;
-    padding: 0.5rem;
+    right: 0rem;
+    top: 7rem;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+    font-size: 0.5rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     z-index: 10;
     background-color: #ADD8E6 ;
-    border-radius: 1rem;
+
+    @media (min-width: $size-1) {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+        border-radius: 0.7rem;
+        }
+
+    @media (min-width: $size-2) {
+        border-radius: 1rem;
+        font-size: 1rem;
+        top: 10rem;
+    }
 
     .price {
         display: flex;
         width: auto;
-        margin: 1rem 0;
-        font-size: large;
+        margin-bottom: 0.3rem;
+        @media (min-width: $size-1) {
+            margin-bottom: 0.7rem;
+        }
     }
     .checkout {
         background-color: #E0FFFF;
-        font-size: medium;
-        padding: 0.4rem;
-        border-radius:0.5rem;
+        padding: 0.2rem;
+        border-radius: 0.3rem;
         cursor: pointer;
+        @media (min-width: $size-1) {
+            padding: 0.4rem;
+            border-radius: 0.5rem;
+        }
     }
 }

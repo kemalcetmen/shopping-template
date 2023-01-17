@@ -8,6 +8,7 @@ import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { HiOutlineHeart } from 'react-icons/hi';
 import { AiOutlineShop } from 'react-icons/ai';
 import { MdOutlineClear } from 'react-icons/md';
+import { FiSettings } from 'react-icons/fi';
 import { changeInput } from '../../../features/inputSlice'
 import { useAppDispatch, useAppSelector } from '../../../store'
 import ThemeButton from './ThemeButton'
@@ -35,6 +36,7 @@ const Header = () => {
                 </Link>
                 </div>
                 <div className={styles.middle}>
+                    <ThemeButton />
                     <div className={styles.search}>
                         <TbSearch />
                         <input
@@ -44,7 +46,6 @@ const Header = () => {
                         />
                         {search && <MdOutlineClear onClick={clearInput} style={{ cursor: "pointer" }} color="#ccc" />}
                     </div>
-                    <ThemeButton />
                 </div>
                 <nav>
                     <IconContext.Provider value={{ color: "#87ceeb " }}>
@@ -56,6 +57,9 @@ const Header = () => {
                         </CustomLink>
                         <CustomLink to="/bag">
                             <HiOutlineShoppingBag />
+                        </CustomLink>
+                        <CustomLink to="/bag">
+                            <FiSettings/>
                         </CustomLink>
                     </IconContext.Provider>
                 </nav>

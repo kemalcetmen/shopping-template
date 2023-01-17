@@ -1,17 +1,30 @@
+@import '../../styles/sizes.scss';
 .basketfooter {
-    width: 8rem;
+    width: auto;
     display: flex;
     justify-content: flex-end;
-
+    @media (min-width: $size-1) {
+        width: 8rem;
+    }
     .addbasket {
-        height: 3rem;
-        padding: 0 0.5rem;
+        height: 2rem;
+        padding: 0.5rem;
         display: flex;
         flex-direction: row;
         align-items: center;
         box-shadow: 0px 0px 1px grey;
-        border-radius: 1rem;
+        border-radius: 0.7rem;
         cursor: pointer;
+        @media (min-width: $size-1) {
+            height: 2.5rem;
+            padding: 0 0.3rem;
+            border-radius: 1rem;
+        }
+        @media (min-width: $size-2) {
+            height: 3rem;
+            padding: 0 0.5rem;
+            border-radius: 1rem;
+        }
     }
     
     .basketoperations{

@@ -10,7 +10,9 @@ const DropDawn = () => {
     const { sort } = useAppSelector((state) => state.sort)
     const dispatch = useAppDispatch()
 
+
     useEffect(() => {
+        //for close when click outside
         const handleOutsideClick = (e: any) => {
             if (isOpen === false) return
             if (ref.current && !ref.current.contains(e.target)) {
@@ -23,15 +25,15 @@ const DropDawn = () => {
         };
     });
     const sortFeatured = () => {
-        dispatch(changeSorting("featured"))
+        dispatch(changeSorting("Featured"))
         setIsOpen(false)
     }
     const sortHighttoLow = () => {
-        dispatch(changeSorting("hightolow"))
+        dispatch(changeSorting("High to Low"))
         setIsOpen(false)
     }
     const sortLowtoHigh = () => {
-        dispatch(changeSorting("lowtohigh"))
+        dispatch(changeSorting("Low to High"))
         setIsOpen(false)
     }
 
@@ -45,13 +47,13 @@ const DropDawn = () => {
                 </div>
                 :
                 <ul ref={ref} onClick={() => { }}>
-                    <li onClick={sortFeatured} className={`${sort === "featured" && styles.choosen}`}>
+                    <li onClick={sortFeatured} className={`${sort === "Featured" && styles.choosen}`}>
                         Featured
                     </li>
-                    <li onClick={sortHighttoLow} className={`${sort === "hightolow" && styles.choosen}`}>
+                    <li onClick={sortHighttoLow} className={`${sort === "High to Low" && styles.choosen}`}>
                         Price: High to Low
                     </li>
-                    <li onClick={sortLowtoHigh} className={`${sort === "lowtohigh" && styles.choosen}`}>
+                    <li onClick={sortLowtoHigh} className={`${sort === "Low to High" && styles.choosen}`}>
                         Price: Low to High
                     </li>
                 </ul>

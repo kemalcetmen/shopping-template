@@ -1,8 +1,4 @@
 import React from 'react'
-import { BsFillWalletFill } from 'react-icons/bs';
-import { abstract, add } from '../../features/productsSlice'
-import { useAppDispatch } from '../../store'
-
 import styles from './index.module.scss'
 import { useAppSelector } from '../../store'
 

@@ -1,16 +1,39 @@
+@import '../../styles/sizes.scss';
 .cardframe {
-    width: 17rem;
-    height: 26rem;
+    width: 10rem;
+    height: 18rem;
     padding: 0.5rem;
+    font-size: 0.6rem;
+
+    @media (min-width: $size-1) {
+        width: 13rem;
+        height: 21.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    @media (min-width: $size-2) {
+        width: 17rem;
+        height: 26rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    // @media (min-width: $size-2) {
+    //     margin-right: 4rem;
+    // }
+    // @media (min-width: $size-3) {
+    //     margin-right: 7rem;
+    // }
 
     .card {
-        // width: 10rem;
-        // height: 25rem;
         height: 100%;
         width: 100%;
-        border-radius: 1.5rem;
+        border-radius: 1rem;
         box-shadow: 0px 0px 2px var(--frames);
-
+        
+        @media (min-width: $size-1) {
+            border-radius: 1.5rem;
+        }
         p {
             padding: 0;
             margin: 0;
@@ -20,17 +43,29 @@
         }
 
         .image {
-            border-radius: 1.5rem 1.5rem 0 0;
+            border-radius: 1rem 1rem 0 0;
 
             position: relative;
-            width: 16rem;
-            height: 16rem;
+            width: 9rem;
+            height: 9rem;
             top: 0;
+            @media (min-width: $size-1) {
+                width: 12rem;
+                height: 12rem;
+                border-radius: 1.5rem 1.5rem 0 0;
+            }
+            @media (min-width: $size-2) {
+                width: 16rem;
+                height: 16rem;
+            }
             
             img{
-                border-radius: 1.5rem 1.5rem 0 0;
+                border-radius: 1rem 1rem 0 0;
                 width: 100%;
                 height: 100%;
+                @media (min-width: $size-1) {
+                    border-radius: 1.5rem 1.5rem 0 0;
+                }
             }
         }
 
@@ -43,15 +78,26 @@
                 display: flex;
                 z-index: 1;
                 background-color: #fff;
-                left: 13.5rem;
+                left: 7rem;
                 top: 0.5rem;
-                height: 2rem;
-                width: 2rem;
+                height: 1.5rem;
+                width: 1.5rem;
+                padding: 0.2rem;
                 justify-content: center;
                 align-items: center;
                 border-radius: 50%;
                 box-shadow: 0px 0px 3px #808080;
                 cursor: pointer;
+                @media (min-width: $size-1) {
+                    left: 9.5rem;
+                    top: 0.5rem;
+                    height: 2rem;
+                    width: 2rem;
+                    padding: 0rem;
+                }
+                @media (min-width: $size-2) {
+                    left: 13.5rem;
+                }
                 &:hover {
                     svg{
                         fill: #6daed3;
@@ -68,9 +114,12 @@
             color: var(--texts);
 
             .explanation {
-                font-size: 1rem;
+                font-size: 0.8rem;
                 display: flex;
                 margin-bottom: 0.5rem;
+                @media (min-width: $size-1) {
+                    font-size: 1rem;
+                }
                 p {
                     height: 43.2px;
                     overflow: hidden;
@@ -97,10 +146,93 @@
 
             .basket {
                 display: flex;
-                height: 3rem;
+                height: 2rem;
                 align-items: center;
                 flex-direction: row;
                 justify-content: space-between;
+                @media (min-width: $size-1) {
+                    height: 2.5rem;
+                }
+                @media (min-width: $size-2) {
+                    height: 3rem;
+                }
+            }
+        }
+    }
+}
+
+.inbag {
+    width: 17rem;
+    height: 6rem;
+    padding: 0.5rem;
+    font-size: 0.6rem;
+
+    @media (min-width: $size-2) {
+        width: 25rem;
+        height: 7rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    @media (min-width: $size-3) {
+        width: 40rem;
+        height: 11rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @media (min-width: $size-1) {
+            border-radius: 1rem;
+        }
+        .image {
+            border-radius: 1rem 1rem 0 0;
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+            top: 0;
+            @media (min-width: $size-2) {
+                width: 6rem;
+                height: 6rem;
+            }
+            @media (min-width: $size-3) {
+                width: 10rem;
+                height: 10rem;
+            }
+            
+            img{
+                border-radius: 1rem  0 0 1rem;
+                width: 100%;
+                height: 100%;
+                @media (min-width: $size-2) {
+                    border-radius: 1rem 0 0 1rem;
+                }
+            }
+        }
+        .cardfooter {
+            display: flex;
+            flex-direction: row;
+            height: 5rem;
+            .explanation {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                font-size: 0.5rem;
+                height: 5rem;
+                @media (min-width: $size-2) {
+                    font-size: 0.7rem;
+                }
+                @media (min-width: $size-3) {
+                    font-size: 1rem;
+                }
+                p {
+                    width: 100%;
+                }
             }
         }
     }

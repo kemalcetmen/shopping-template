@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useAppSelector } from '../store'
 
 interface Product {
@@ -13,10 +12,10 @@ interface Product {
     inBasket: number,
 }
 
-// this hook takes all necessary states and gives new products which u wants
+/* this hook takes all necessary states and gives new products which u wants
 
-// before this hook I did it on other two hooks but I guess it is faster
-//you can check them in ./olds
+before this hook I did it on other two hooks but I guess it is faster
+ou can check them in ./olds*/
 const useAllFilter = () => {
     const { products } = useAppSelector((state) => state.products)
     const { search } = useAppSelector((state) => state.search)
@@ -25,12 +24,15 @@ const useAllFilter = () => {
     let newProducts = [...products]
 
     switch (sort) {
-        case "suggest":
+        case "Featured":
             newProducts.sort((a, b) => b.id - a.id);
             break;
 
-        case "price":
+        case "High to Low":
             newProducts.sort((a, b) => b.price - a.price);
+            break;
+        case "Low to High":
+            newProducts.sort((a, b) => a.price - b.price);
             break;
 
         default:
