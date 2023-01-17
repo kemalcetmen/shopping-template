@@ -6,11 +6,9 @@ interface Modal {
 }
 
 interface Iproduct {
-    id: number,
+    id: string,
     photo: string,
 }
-/* i prefer take url in there you can take it in modal
-from product state*/
 
 const initialState: Modal = {
     product: null,

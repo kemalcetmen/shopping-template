@@ -58,7 +58,7 @@ const Header = () => {
                         <CustomLink to="/bag">
                             <HiOutlineShoppingBag />
                         </CustomLink>
-                        <CustomLink to="/bag">
+                        <CustomLink to="/address">
                             <FiSettings/>
                         </CustomLink>
                     </IconContext.Provider>

@@ -7,7 +7,7 @@ const NoProduct = () => {
     useEffect(
         // I am sure there is a better way
         () => {
-            let timer = setTimeout(() => setLoading(false), 1000);
+            let timer = setTimeout(() => setLoading(false), 500);
             return () => {
                 clearTimeout(timer);
             };

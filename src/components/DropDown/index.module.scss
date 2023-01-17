@@ -1,4 +1,6 @@
 @import '../../styles/sizes.scss';
+@import '../../styles/colors.scss';
+
 .dropdown {
     position: fixed;
     left: 0;
@@ -15,7 +17,7 @@
         font-size: 1rem;
     }
     .closed{
-        background-color: #96d8de;
+        background-color: $helpers_outer;
         border-radius: 0 0.7rem 0.7rem 0;
         padding: 0.3rem;
         width:  4rem;
@@ -36,14 +38,14 @@
     }
 
     ul {
-        background-color: #aae7ed;
+        background-color: $helpers_outer;
         border-radius: 0 0.7rem 0.7rem 0;
         padding: 0.3rem 0.3rem 0.3rem 0;
         flex-wrap: wrap;
         font-size: 0.8rem;
         
         .choosen {
-            background-color: #61dae5;
+            background-color: $helpers_inner;
         }
 
         li {
@@ -53,7 +55,6 @@
             padding: 0.05rem 0.2rem;
             border-radius: 0 0.3rem 0.3rem 0;
             cursor: pointer;
-            box-shadow: 0px 1px 1px #444d4e;
 
             @media (min-width: $size-1) {
                 margin: 0.2rem 0.2rem 0.2rem 0;
@@ -61,8 +62,7 @@
                 font-size: 1rem;
             }
             &:hover {
-                box-shadow: 0px 0.5px 0.5px #868686;
-                background-color: #73e4ee;
+                background-color: $helpers_inner_hover;
             }
         }
     }

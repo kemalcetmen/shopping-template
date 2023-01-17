@@ -2,8 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  /* background-color: var(--background); */
 }
 body {
   margin: 0;
@@ -12,9 +10,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* width */
-    /* background-color: var(--background); */
-
 }
 
 code {
@@ -24,20 +19,16 @@ code {
 
 .light-theme {
   --background:  white;
-  --background2: #A6C3CF;
-  --foreground: #FFFFF4;
   --texts: #000;
   --texts2: #B7D6E4;
   --frames: #ccc;
-  --scr: #3a8eb4;
+  --scr: #f5f5f5;
 
 }
 .dark-theme {
   --background: #202124;
-  --background2: #4b4c4d;
-  --foreground:  #202124;
   --texts: #ffffff;
   --texts2: #ffffff;
   --frames: #ffffff;
-  --scr: #b6b6b6;
+  --scr: #000;
 }

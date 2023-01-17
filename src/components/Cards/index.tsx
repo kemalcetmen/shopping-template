@@ -4,7 +4,8 @@ import Card from '../Card'
 import NoProduct from '../NoProduct'
 
 interface Product {
-    id: number,
+    id: string,
+    suggestion: number,
     brand: string,
     explanation: string,
     photo: string,

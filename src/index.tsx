@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import Bag from './Bag';
 import Favorites from './Favorites';
+import Address from './Address';
 import NotFound from './NotFound';
 import Layout from './components/Layout';
 import { Provider } from "react-redux"
@@ -23,6 +24,7 @@ root.render(
               <Route index element={<Layout><App /></Layout>} />
               <Route path="favorites" element={<Layout><Favorites /></Layout>} />
               <Route path="bag" element={<Layout><Bag /></Layout>} />
+              <Route path="address" element={<Layout><Address /></Layout>} />
               <Route path='*' element={<Layout><NotFound /></Layout>}/>
             <Route/>
             </Route>

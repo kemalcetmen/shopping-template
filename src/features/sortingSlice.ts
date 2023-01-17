@@ -1,7 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit"
 
-/* i prefer take url in there you can take it in modal
-from product state*/
 interface State {
     sort: string,
 }

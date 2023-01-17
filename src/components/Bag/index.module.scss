@@ -1,11 +1,12 @@
 @import '../../styles/sizes.scss';
+@import '../../styles/colors.scss';
 .bag {
     width: auto;
     height: auto;
     position: fixed;
     right: 0rem;
-    top: 7rem;
-    padding: 0.2rem;
+    top: 3rem;
+    padding: 0.3rem;
     border-radius: 0.4rem;
     font-size: 0.5rem;
     display: flex;
@@ -13,18 +14,18 @@
     flex-direction: column;
     justify-content: center;
     z-index: 10;
-    background-color: #ADD8E6 ;
+    background-color: $helpers_outer ;
 
     @media (min-width: $size-1) {
+        top: 4rem;
         font-size: 0.7rem;
-        padding: 0.4rem;
+        padding: 0.5rem;
         border-radius: 0.7rem;
         }
 
     @media (min-width: $size-2) {
-        border-radius: 1rem;
         font-size: 1rem;
-        top: 10rem;
+        padding: 0.7rem;
     }
 
     .price {
@@ -36,10 +37,13 @@
         }
     }
     .checkout {
-        background-color: #E0FFFF;
+        background-color: $helpers_inner;
         padding: 0.2rem;
         border-radius: 0.3rem;
         cursor: pointer;
+        &:hover {
+            background-color: $helpers_inner_hover;
+        }
         @media (min-width: $size-1) {
             padding: 0.4rem;
             border-radius: 0.5rem;

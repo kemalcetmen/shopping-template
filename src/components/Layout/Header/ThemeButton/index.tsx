@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react';
 const ThemeButton = () => {
   const [theme, setTheme] = useState<string>("light-theme")
   
-  // const [theme, setTheme] = useState('dark-theme')
-
   useEffect(() => {
     document.body.className = theme
   }, [theme])

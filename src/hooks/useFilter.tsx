@@ -1,7 +1,8 @@
 import { useAppSelector } from '../store'
 
 interface Product {
-    id: number,
+    id: string,
+    suggestion: number,
     brand: string,
     explanation: string,
     photo: string,
@@ -15,7 +16,7 @@ interface Product {
 /* this hook takes all necessary states and gives new products which u wants
 
 before this hook I did it on other two hooks but I guess it is faster
-ou can check them in ./olds*/
+you can check them in ./olds*/
 const useAllFilter = () => {
     const { products } = useAppSelector((state) => state.products)
     const { search } = useAppSelector((state) => state.search)
@@ -25,7 +26,7 @@ const useAllFilter = () => {
 
     switch (sort) {
         case "Featured":
-            newProducts.sort((a, b) => b.id - a.id);
+            newProducts.sort((a, b) => b.suggestion - a.suggestion);
             break;
 
         case "High to Low":
@@ -36,7 +37,7 @@ const useAllFilter = () => {
             break;
 
         default:
-            newProducts.sort((a, b) => b.id - a.id);
+            newProducts.sort((a, b) => b.suggestion - a.suggestion);
     }
     if (search) newProducts = newProducts?.filter((product: Product) => {
         let fullName = product.brand + ' ' + product.explanation

@@ -7,7 +7,8 @@ export const fetchUser = createAsyncThunk("fetchUser", async () => {
 })
 
 interface Product {
-    id: number,
+    id: string,
+    suggestion: number,
     brand: string,
     explanation: string,
     photo: string,
@@ -34,25 +35,33 @@ const productsSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
-        add: (state, action: PayloadAction<number>) => {
-            if (state.products === null) return
+        add: (state, action: PayloadAction<string>) => {
+            if (state.products.length < 1) return
             const index = state.products?.findIndex((product: Product) => product.id === action.payload)
             state.products[index] = { ...state.products[index], inBasket: state.products[index].inBasket + 1 }
         },
-        abstract: (state, action: PayloadAction<number>) => {
-            if (state.products === null) return
+        addMuch: (state, action: PayloadAction<{
+            id: string,
+            amount: number,
+        }>) => {
+            if (state.products.length < 1) return
+            const index = state.products?.findIndex((product: Product) => product.id === action.payload.id)
+            state.products[index] = { ...state.products[index], inBasket: action.payload.amount }
+        },
+        abstract: (state, action: PayloadAction<string>) => {
+            if (state.products.length < 1) return
             const index = state.products?.findIndex((product: Product) => product.id === action.payload)
             if (state.products[index].inBasket === 0) return
             state.products[index] = { ...state.products[index], inBasket: state.products[index].inBasket - 1 }
         },
-        empty: (state, action: PayloadAction<number>) => {
-            if (state.products === null) return
+        empty: (state, action: PayloadAction<string>) => {
+            if (state.products.length < 1) return
             const index = state.products?.findIndex((product: Product) => product.id === action.payload)
             if (state.products[index].inBasket === 0) return
             state.products[index] = { ...state.products[index], inBasket: 0 }
         },
-        changeLiked: (state, action: PayloadAction<number>) => {
-            if (state.products === null) return
+        changeLiked: (state, action: PayloadAction<string>) => {
+            if (state.products.length < 1) return
             const index = state.products?.findIndex((product: Product) => product.id === action.payload)
             state.products[index] = { ...state.products[index], isLiked: !state.products[index].isLiked }
         },
@@ -75,4 +84,4 @@ const productsSlice = createSlice({
 })
 
 export default productsSlice.reducer
-export const { add, abstract, empty, changeLiked } = productsSlice.actions
+export const { add, addMuch, abstract, empty, changeLiked } = productsSlice.actions

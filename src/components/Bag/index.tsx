@@ -17,7 +17,6 @@ const Bag = () => {
                 Proceed to Checkout
             </div>
             }
-
         </div>
     )
 }

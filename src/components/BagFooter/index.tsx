@@ -10,7 +10,7 @@ import { useAppDispatch } from '../../store'
 import styles from './index.module.scss'
 
 interface Props {
-    id: number,
+    id: string,
     photo: string,
     inBasket: number
 }
