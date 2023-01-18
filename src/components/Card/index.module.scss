@@ -116,13 +116,16 @@
                     font-size: 1rem;
                 }
                 p {
-                    height: 43.2px;
+                    height: 33.6px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     display: -webkit-box;
                     -webkit-line-clamp: 2; /* number of lines to show */
                     line-clamp: 2; 
                     -webkit-box-orient: vertical;
+                    @media (min-width: $size-1) {
+                        height: 43.2px;
+                    }
                 }
             }
             
