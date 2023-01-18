@@ -14,6 +14,7 @@
         width: 1rem;
         text-align: center;
         cursor: pointer;
+        color: var(--texts);
     }
     @media (min-width: $size-1) {
         display: flex;
