@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import styles from './index.module.scss'
 import Headroom from "react-headroom"
@@ -37,6 +37,12 @@ const Header = () => {
          setLang("En")}
     }
     //Sorry for lang bar. I didnt have time
+
+
+    useEffect(()=>{
+        //useEffect usage is not ok buut it is temporary solution
+        i18n.changeLanguage("En")
+    },[])
 
     const searchHolder= t("search")
     return (
