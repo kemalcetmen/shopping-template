@@ -100,7 +100,7 @@ const MyApp = () => {
               ) : null}
             </div>
             <div className={styles.fields}>
-              <label htmlFor="address">address</label>
+              <label htmlFor="address">Address</label>
               <Field id="address" name="address" placeholder="Address" />
               {errors.address && touched.address ? (
                 <p>{errors.address}</p>
